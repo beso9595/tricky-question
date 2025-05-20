@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tricky question</title>
+  <title>Tricky Question</title>
   <style>
     html, body {
       height: 100%;
@@ -81,8 +81,8 @@
   <div id="proposal" class="container">
     <h1>Will you be my Bridesmaid?</h1>
     <div class="button-container">
-      <button class="yes-button" onclick="showCongrats()">Yes</button>
-      <button class="no-button" onclick="showCongrats()">No</button>
+      <button class="yes-button" onclick="showMessage('congrats')">Yes</button>
+      <button class="no-button" onclick="showMessage('noWay')">No</button>
     </div>
   </div>
 
@@ -90,10 +90,16 @@
     <div class="message">Congrats 🎉❤️</div>
   </div>
 
+  <div id="noWay" class="container hidden">
+    <div class="message">თმით გითრევ 😂</div>
+  </div>
+
   <script>
-    function showCongrats() {
+    function showMessage(id) {
       document.getElementById('proposal').classList.add('hidden');
-      document.getElementById('congrats').classList.remove('hidden');
+      document.getElementById('congrats').classList.add('hidden');
+      document.getElementById('noWay').classList.add('hidden');
+      document.getElementById(id).classList.remove('hidden');
     }
   </script>
 </body>
